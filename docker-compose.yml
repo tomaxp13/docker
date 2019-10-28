@@ -13,3 +13,8 @@ services:
     - MYSQL_USER=user
     - MYSQL_PASSWORD=password
     - MYSQL_DATABASE=demodb
+  centos-openjdk:
+    build:
+      context: busybox
+      dockerfile: Dockerfile
+    image: parrotstream/centos-openjdk:latest
