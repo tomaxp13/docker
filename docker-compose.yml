@@ -1,9 +1,5 @@
 version: '3'
 services:
-  web:
-    build: ./nginx
-    ports:
-     - "8080:80"
   db:
     build: ./mysql
     ports:
@@ -13,8 +9,14 @@ services:
     - MYSQL_USER=user
     - MYSQL_PASSWORD=password
     - MYSQL_DATABASE=demodb
+
   centos-openjdk:
     build:
       context: busybox
       dockerfile: Dockerfile
     image: parrotstream/centos-openjdk:latest
+  web:
+    build: ./nginx
+    ports:
+     - "8080:80"
+
